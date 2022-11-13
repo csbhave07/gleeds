@@ -1,0 +1,65 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer opened="true" class="example-sidenav bg-black font-white" mode="side">
+        <!-- <p>Auto-resizing sidenav</p> -->
+        <div class="brand-title pall-20" *ngIf="!showFiller">
+            <div class="img-wrapper">
+                <img src="../../assets/images/de-image.png" alt="image">
+            </div>
+        </div>
+        <div class="brand-title pall-20" *ngIf="showFiller">
+            <div class="img-wrapper">
+                <img src="../../assets/images/de-image.png" alt="image">
+            </div>
+            <div class="brand-text">
+                <h3 class="light-orange">Decarbonise</h3>
+            </div>
+        </div>
+        <div class="btn-toggle">
+            <div class="divider" *ngIf="showFiller">
+                <mat-divider></mat-divider>
+            </div>
+            <button (click)="showFiller = !showFiller" mat-button>
+                <mat-icon *ngIf="showFiller">keyboard_arrow_left</mat-icon>
+                <mat-icon *ngIf="!showFiller">keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+        <div *ngIf="!showFiller" class="closed-drawer">
+            <div>
+                <button mat-raised-button class="btn-menu">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <div class="sidebar-extra-menu">
+                <img src="../../assets/images/article.svg" alt="image">
+            </div>
+        </div>
+        <div class="sidebar-menu opened-drawer" *ngIf="showFiller">
+            <div>
+                <button mat-raised-button class="btn-menu">
+                    <mat-icon>add</mat-icon>
+                    <span>New Assessment</span>
+                </button>
+            </div>
+
+            <div class="sidebar-extra-menu">
+                <a>
+                    <img src="../../assets/images/article.svg" alt="image">
+                    <span>About Tool</span>
+                </a>
+            </div>
+        </div>
+        <div class="bottom-text" *ngIf="showFiller">
+            <div class="img-wrapper">
+                <img src="../../assets/images/Group.png" alt="image">
+            </div>
+        </div>
+    </mat-drawer>
+    <div class="project-form">
+        <div class="left-side">
+            <app-project-form></app-project-form>
+        </div>
+        <div class="side-image">
+            <img src="../../assets/images/pexels-francesco-ungaro-4322027 1.png" alt="image">
+        </div>
+    </div>
+</mat-drawer-container>

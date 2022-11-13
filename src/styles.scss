@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $Inter;
+}
+
+.bg-black {
+  background-color: $black;
+}
+.font-white {
+  color: $white;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.plr-20 {
+  padding: 0 20px;
+}
+.plr-40 {
+  padding: 0 40px;
+}
+.ptb-40 {
+  padding: 40px 0;
+}
+.ptb-20 {
+  padding: 20px 0;
+}
+.pall-20 {
+  padding: 20px;
+}
+.pall-40 {
+  padding: 40px;
+}
+.light-orange {
+  color: $light-orange;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: unset;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+.btn-light-orange {
+  background-color: $light-orange;
+}

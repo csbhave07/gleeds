@@ -1,0 +1,141 @@
+<div class="project-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <app-breadcrumb [breadcrumbNav]="breadcrumbData"></app-breadcrumb>
+                <div class="form-navigation">
+                    <a routerLink="./">
+                        <mat-icon>arrow_back</mat-icon>
+                    </a>
+                    <h3>Project Information</h3>
+                </div>
+                <p class="instructions pt-20">Choose the project configurations from the dropdowns</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form [formGroup]="myForm">
+                    <div class="input-form-group">
+                        <div class="form-data">
+                            <label for="">Sector*</label>
+                            <div class="form-input">
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Placeholder" formControlName="sector">
+                                        <mat-option *ngFor="let s of sectorData" [value]="s?.title">
+                                            {{s?.title}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <p class="input-instruction">Provide the sector to which the project belongs to (Ex:
+                                    Commercial, Residential, Education Etc.,)</p>
+                            </div>
+                        </div>
+
+                        <div class="form-data">
+                            <label for="">Sub-sector*</label>
+                            <div class="form-input">
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Placeholder" formControlName="subSector">
+                                        <mat-option *ngFor="let ss of subSectorData" [value]="ss?.title">
+                                            {{ss?.title}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <p class="input-instruction">Provide sub-sector to which the project belongs to
+                                    (Ex:Commercial - Office space, Residential - Apartment, Education -
+                                    Primary/Secondayr School/Univeristy Etc.,)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-data">
+                            <label for="">Project name*</label>
+                            <div class="form-input">
+                                <mat-form-field appearance="outline" fxFlex>
+                                    <!-- <mat-label>Project name</mat-label> -->
+                                    <input type="text" matInput formControlName="projectName" required
+                                        placeholder="placeholder">
+                                </mat-form-field>
+                                <mat-error
+                                    *ngIf="myForm.controls.projectName.touched && myForm.controls.projectName.invalid">
+                                    <span *ngIf="myForm.controls.projectName.errors.required">This field is
+                                        mandatory.</span>
+                                    <span *ngIf="myForm.controls.projectName.errors.pattern">This field is
+                                        invalid.</span>
+                                </mat-error>
+                                <p class="input-instruction" *ngIf="!myForm.controls.projectName.touched">Enter a name
+                                    for the project</p>
+                            </div>
+                        </div>
+
+                        <div class="form-data">
+                            <label for="">Project code*</label>
+                            <div class="form-input">
+                                <mat-form-field appearance="outline" fxFlex>
+                                    <input type="text" matInput formControlName="projectCode" required
+                                        placeholder="placeholder">
+                                </mat-form-field>
+                                <mat-error
+                                    *ngIf="myForm.controls.projectCode.touched && myForm.controls.projectCode.invalid">
+                                    <span *ngIf="myForm.controls.projectCode.errors.required">This field is
+                                        mandatory.</span>
+                                    <span *ngIf="myForm.controls.projectCode.errors.pattern">This field is
+                                        invalid.</span>
+                                </mat-error>
+                                <p class="input-instruction" *ngIf="!myForm.controls.projectCode.touched">Enter a code
+                                    for the project</p>
+                            </div>
+                        </div>
+
+                        <div class="form-data">
+                            <label for="">Frame type*</label>
+                            <div class="form-input">
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Placeholder" formControlName="frameType">
+                                        <mat-option *ngFor="let ft of frameTypeData" [value]="ft?.title">
+                                            {{ft?.title}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <p class="input-instruction">Provide Type of Frames to design (Ex: Concrete Frames,
+                                    Steel
+                                    Frames Etc.,)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-data">
+                            <label for="">Foundation type*</label>
+                            <div class="form-input">
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Placeholder" formControlName="foundationType">
+                                        <mat-option *ngFor="let ft of foundationTypeData" [value]="ft?.title">
+                                            {{ft?.title}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <p class="input-instruction">Provide Type of Foundations (Ex: Pile, Raft, or Pad
+                                    Foundations Etc.,)</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-data btn-radio">
+                        <label for="">Basement?*</label>
+                        <div class="form-input">
+                            <mat-radio-group formControlName="basement" aria-labelledby="radio-group-label"
+                                class="example-radio-group">
+                                <mat-radio-button value="yes">Yes</mat-radio-button>
+                                <mat-radio-button value="no">No</mat-radio-button>
+                            </mat-radio-group>
+                            <p class="input-instruction">Provide requirement of Basements in the Project (Ex:Yes /
+                                No)</p>
+                        </div>
+                    </div>
+
+                    <div class="action-btn-group ptb-20">
+                        <button mat-raised-button class="btn-light-orange" (click)="formSubmit()" [disabled]="myForm.invalid">Next</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

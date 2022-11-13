@@ -1,0 +1,10 @@
+.breadcrumb-item+.breadcrumb-item::before{
+    content: var(--bs-breadcrumb-divider, ">");
+    font-weight: 700;
+}
+.home{
+    opacity: 0.5;
+}
+a{
+    text-transform: capitalize;
+}

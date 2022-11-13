@@ -1,0 +1,69 @@
+@import "../../../variables.scss";
+
+.project-form {
+  padding: 40px 20px;
+}
+a {
+  margin-right: 10px;
+}
+.instructions {
+  margin-bottom: 0;
+}
+.form-navigation {
+  display: flex;
+  h3 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+form {
+  .mat-form-field {
+    width: 100%;
+  }
+  .form-data {
+    width: 50%;
+    padding-right: 30px;
+    display: inline-block;
+    margin: 20px auto 0;
+    label {
+      font-weight: 600;
+      font-size: 14px;
+      font-family: $Inter;
+    }
+  }
+}
+.mat-radio-group {
+  width: 200px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.input-instruction {
+  font-size: 12px;
+  opacity: 0.5;
+}
+.input-form-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.btn-radio {
+  width: 100% !important;
+}
+.action-btn-group {
+  button {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .input-form-group {
+    .form-data {
+      width: 100%;
+      margin: 0;
+    }
+    flex-direction: column;
+  }
+}
